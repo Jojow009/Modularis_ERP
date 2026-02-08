@@ -1,0 +1,17 @@
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\obj\Debug\net8.0\ERP.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\obj\Debug\net8.0\ERP.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\obj\Debug\net8.0\ERP.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\obj\Debug\net8.0\ERP.Infrastructure.AssemblyInfo.cs
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\obj\Debug\net8.0\ERP.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\bin\Debug\net8.0\ERP.Infrastructure.deps.json
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\bin\Debug\net8.0\ERP.Infrastructure.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\bin\Debug\net8.0\ERP.Infrastructure.pdb
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\bin\Debug\net8.0\ERP.Application.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\bin\Debug\net8.0\ERP.Domain.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\bin\Debug\net8.0\ERP.Domain.pdb
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\bin\Debug\net8.0\ERP.Application.pdb
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\obj\Debug\net8.0\ERP.Infrastructure.csproj.CopyComplete
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\obj\Debug\net8.0\ERP.Infrastructure.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\obj\Debug\net8.0\refint\ERP.Infrastructure.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\obj\Debug\net8.0\ERP.Infrastructure.pdb
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Infrastructure\obj\Debug\net8.0\ref\ERP.Infrastructure.dll

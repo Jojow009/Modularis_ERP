@@ -1,0 +1,264 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.API\\ERP.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.API\\ERP.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.API\\ERP.API.csproj",
+        "projectName": "ERP.API",
+        "projectPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.API\\ERP.API.csproj",
+        "packagesPath": "C:\\Users\\eu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\eu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Application\\ERP.Application.csproj": {
+                "projectPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Application\\ERP.Application.csproj"
+              },
+              "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Domain\\ERP.Domain.csproj": {
+                "projectPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Domain\\ERP.Domain.csproj"
+              },
+              "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Infrastructure\\ERP.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Infrastructure\\ERP.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.*, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Application\\ERP.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Application\\ERP.Application.csproj",
+        "projectName": "ERP.Application",
+        "projectPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Application\\ERP.Application.csproj",
+        "packagesPath": "C:\\Users\\eu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\eu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Domain\\ERP.Domain.csproj": {
+                "projectPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Domain\\ERP.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Domain\\ERP.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Domain\\ERP.Domain.csproj",
+        "projectName": "ERP.Domain",
+        "projectPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Domain\\ERP.Domain.csproj",
+        "packagesPath": "C:\\Users\\eu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\eu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Infrastructure\\ERP.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Infrastructure\\ERP.Infrastructure.csproj",
+        "projectName": "ERP.Infrastructure",
+        "projectPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Infrastructure\\ERP.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\eu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\eu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Application\\ERP.Application.csproj": {
+                "projectPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Application\\ERP.Application.csproj"
+              },
+              "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Domain\\ERP.Domain.csproj": {
+                "projectPath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Domain\\ERP.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

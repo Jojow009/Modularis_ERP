@@ -1,0 +1,15 @@
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\bin\Debug\net8.0\ERP.Application.deps.json
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\bin\Debug\net8.0\ERP.Application.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\bin\Debug\net8.0\ERP.Application.pdb
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\bin\Debug\net8.0\ERP.Domain.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\bin\Debug\net8.0\ERP.Domain.pdb
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\obj\Debug\net8.0\ERP.Application.csproj.AssemblyReference.cache
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\obj\Debug\net8.0\ERP.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\obj\Debug\net8.0\ERP.Application.AssemblyInfoInputs.cache
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\obj\Debug\net8.0\ERP.Application.AssemblyInfo.cs
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\obj\Debug\net8.0\ERP.Application.csproj.CoreCompileInputs.cache
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\obj\Debug\net8.0\ERP.Application.csproj.CopyComplete
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\obj\Debug\net8.0\ERP.Application.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\obj\Debug\net8.0\refint\ERP.Application.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\obj\Debug\net8.0\ERP.Application.pdb
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Application\obj\Debug\net8.0\ref\ERP.Application.dll

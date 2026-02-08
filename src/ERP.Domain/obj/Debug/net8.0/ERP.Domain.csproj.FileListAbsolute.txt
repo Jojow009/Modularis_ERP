@@ -1,0 +1,11 @@
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\bin\Debug\net8.0\ERP.Domain.deps.json
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\bin\Debug\net8.0\ERP.Domain.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\bin\Debug\net8.0\ERP.Domain.pdb
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\obj\Debug\net8.0\ERP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\obj\Debug\net8.0\ERP.Domain.AssemblyInfoInputs.cache
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\obj\Debug\net8.0\ERP.Domain.AssemblyInfo.cs
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\obj\Debug\net8.0\ERP.Domain.csproj.CoreCompileInputs.cache
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\obj\Debug\net8.0\ERP.Domain.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\obj\Debug\net8.0\refint\ERP.Domain.dll
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\obj\Debug\net8.0\ERP.Domain.pdb
+C:\Users\eu\Desktop\ERP_Moldularis\src\ERP.Domain\obj\Debug\net8.0\ref\ERP.Domain.dll
