@@ -6,15 +6,16 @@ using ERP.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --- 1. SERVIÇOS ---
-// Habilita a API a encontrar o seu TenantsController
+// --- 1. CONFIGURAÇÃO DE SERVIÇOS ---
+
 builder.Services.AddControllers(); 
 
-// Configura um banco temporário na RAM (Não precisa de string de conexão agora)
+// Conexão com PostgreSQL via AppDbContext
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseInMemoryDatabase("ERPDb"));
+    options.UseNpgsql(connectionString));
 
-// Permite que o Next.js (Porta 3000) converse com esta API
+// Configuração de CORS para o Frontend Next.js (Porta 3000)
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowFrontend",
         policy => policy.WithOrigins("http://localhost:3000")
@@ -22,16 +23,20 @@ builder.Services.AddCors(options => {
                         .AllowAnyHeader());
 });
 
+// Swagger para testes da API
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Registra as camadas para que o Controller possa usá-las
+// Injeção de Dependência - Camadas do ERP
 builder.Services.AddScoped<ITenantRepository, TenantRepository>();
 builder.Services.AddScoped<CreateTenantUseCase>();
+// Se tiver Repositórios de Produtos e Usuários, adicione-os aqui também:
+// builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
-// --- 2. MIDDLEWARE ---
+// --- 2. CONFIGURAÇÃO DO MIDDLEWARE ---
+
 app.UseCors("AllowFrontend");
 
 if (app.Environment.IsDevelopment())
@@ -40,11 +45,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
-// ESSENCIAL: Isso ativa a rota /api/tenants
 app.MapControllers(); 
 
-app.MapGet("/", () => "API do ERP Modularis está rodando!");
+app.MapGet("/", () => "API do ERP Modularis está rodando com PostgreSQL!");
 
 app.Run();

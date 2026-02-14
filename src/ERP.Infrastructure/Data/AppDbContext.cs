@@ -1,16 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using ERP.Domain.Entities;
-namespace ERP.Infrastructure.Data;
 
-public class AppDbContext : DbContext
+namespace ERP.Infrastructure.Data
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-
-    public DbSet<Tenant> Tenants { get; set; }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public class AppDbContext : DbContext
     {
-        base.OnModelCreating(modelBuilder);
-        // Suas configurações aqui...
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+         public DbSet<ERP.Domain.Entities.Product> Products { get; set; }
+
+        public DbSet<Tenant> Tenants { get; set; }
+        
+        // A sintaxe correta e simplificada é esta:
+        public DbSet<User> Users { get; set; }
     }
 }
+

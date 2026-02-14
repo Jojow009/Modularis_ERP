@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xevcuxQXMTJIk0cO+jS0VQhx1cgyKCwgSOScURVOzz8huJx73GtA9IFUN4aJL5HWSug2TFamm8x9sT9R+uGI1Q==",
+  "dgSpecHash": "XJgh0scuY1Sw5oKXzcQtati2TsmQ1tK7/Nfubjp2k5Yy22PNmSpP8LRXMgGBZA4ecvoXcsyGOOaUSpjWgEunIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\eu\\Desktop\\ERP_Moldularis\\src\\ERP.Application\\ERP.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\eu\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

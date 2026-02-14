@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ERP.Application.Services;
 using ERP.Domain.Entities;
+using ERP.Infrastructure.Data;
+using System.Threading.Tasks;
 
 namespace ERP.API.Controllers
 {
@@ -8,29 +9,31 @@ namespace ERP.API.Controllers
     [Route("api/[controller]")]
     public class TenantsController : ControllerBase
     {
-        private readonly CreateTenantUseCase _createTenantUseCase;
+        private readonly AppDbContext _context;
 
-        public TenantsController(CreateTenantUseCase createTenantUseCase)
+        public TenantsController(AppDbContext context)
         {
-            _createTenantUseCase = createTenantUseCase;
+            _context = context;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Tenant tenant)
+        public async Task<IActionResult> Create([FromBody] TenantRequest request)
         {
-            if (tenant == null) return BadRequest();
+            // Pega os dados que vieram do Next.js e cria a Entidade
+            var tenant = new Tenant(request.Name, request.Cnpj);
             
-            // Este mapeamento resolve o erro de conversão CS1503
-            var request = new CreateTenantRequest 
-            { 
-                Name = tenant.Name, 
-                Cnpj = tenant.Cnpj 
-            };
-            
-            // Verifique se o seu UseCase possui o método ExecuteAsync
-            await _createTenantUseCase.ExecuteAsync(request);
-            
-            return Ok(new { message = "Empresa cadastrada com sucesso!" });
+            _context.Tenants.Add(tenant);
+            await _context.SaveChangesAsync();
+
+            // Retorna a empresa criada (com o ID gerado) para o Frontend
+            return Ok(tenant);
         }
+    }
+
+    // A MÁGICA ESTÁ AQUI: O "molde" dos dados que vêm do Frontend (Next.js)
+    public class TenantRequest 
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Cnpj { get; set; } = string.Empty;
     }
 }
