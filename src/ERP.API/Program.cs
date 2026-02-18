@@ -1,43 +1,62 @@
 using Microsoft.EntityFrameworkCore;
 using ERP.Infrastructure.Data;
 using ERP.Infrastructure.Repositories;
-using ERP.Application.Interfaces;
-using ERP.Application.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --- 1. CONFIGURAÇÃO DE SERVIÇOS ---
-
-builder.Services.AddControllers(); 
-
-// Conexão com PostgreSQL via AppDbContext
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+// --- CONFIGURAÇÃO DO BANCO DE DADOS ---
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configuração de CORS para o Frontend Next.js (Porta 3000)
-builder.Services.AddCors(options => {
-    options.AddPolicy("AllowFrontend",
-        policy => policy.WithOrigins("http://localhost:3000")
-                        .AllowAnyMethod()
-                        .AllowAnyHeader());
+// --- INJEÇÃO DE DEPENDÊNCIA ---
+builder.Services.AddScoped<ProductRepository>();
+
+// --- CONFIGURAÇÃO DO REDIS ---
+builder.Services.AddStackExchangeRedisCache(options => {
+    options.Configuration = "localhost:6379";
 });
 
-// Swagger para testes da API
+// --- NOVO: CONFIGURAÇÃO DE CORS ---
+// Permite que o seu frontend Next.js converse com esta API
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ModularisAppPolicy", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // Origem do seu frontend
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+// --- SEGURANÇA: CONFIGURAÇÃO DO JWT ---
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "ChaveSegurancaPadraoModularis2026";
+var keyBytes = Encoding.ASCII.GetBytes(jwtKey);
+
+builder.Services.AddAuthentication(options => {
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false; 
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
+        ValidateIssuer = false, 
+        ValidateAudience = false
+    };
+});
+
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Injeção de Dependência - Camadas do ERP
-builder.Services.AddScoped<ITenantRepository, TenantRepository>();
-builder.Services.AddScoped<CreateTenantUseCase>();
-// Se tiver Repositórios de Produtos e Usuários, adicione-os aqui também:
-// builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
 var app = builder.Build();
-
-// --- 2. CONFIGURAÇÃO DO MIDDLEWARE ---
-
-app.UseCors("AllowFrontend");
 
 if (app.Environment.IsDevelopment())
 {
@@ -45,8 +64,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapControllers(); 
+// --- ORDEM DOS MIDDLEWARES (CRUCIAL) ---
 
-app.MapGet("/", () => "API do ERP Modularis está rodando com PostgreSQL!");
+// 1. O CORS deve vir antes de tudo para autorizar a requisição do navegador
+app.UseCors("ModularisAppPolicy");
 
+// 2. Autenticação (Quem é você?)
+app.UseAuthentication(); 
+
+// 3. Autorização (O que você pode fazer?)
+app.UseAuthorization();  
+
+app.MapControllers();
 app.Run();

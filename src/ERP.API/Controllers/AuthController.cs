@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ERP.Infrastructure.Data;
-using ERP.Application.DTOs;
+using ERP.API.DTOs; // A ponte agora está funcionando
 
 namespace ERP.API.Controllers
 {
@@ -10,21 +10,26 @@ namespace ERP.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public AuthController(AppDbContext context) => _context = context;
+
+        public AuthController(AppDbContext context)
+        {
+            _context = context;
+        }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+            // CONSULTA REAL: Verifica se o ID existe no PostgreSQL
+            var tenant = await _context.Tenants.FirstOrDefaultAsync(t => t.Id == request.TenantId);
 
-            if (user == null || !user.VerifyPassword(request.Password))
-                return Unauthorized(new { message = "E-mail ou senha inválidos." });
+            if (tenant == null)
+            {
+                // Se o código for inventado, o C# barra aqui!
+                return Unauthorized(new { message = "Código de empresa inválido!" });
+            }
 
-            return Ok(new { 
-                token = "fake-jwt-token", 
-                tenantId = user.TenantId,
-                email = user.Email 
-            });
+            // Se a empresa existe (como a Griffo do CNPJ 57.789.329/0001-09), liberamos
+            return Ok(new { message = "Acesso concedido", tenantName = tenant.Name });
         }
     }
 }

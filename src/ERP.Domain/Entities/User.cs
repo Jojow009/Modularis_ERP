@@ -2,7 +2,6 @@ using System;
 
 namespace ERP.Domain.Entities
 {
-   
     public class User
     {
         public Guid Id { get; private set; }
@@ -13,8 +12,14 @@ namespace ERP.Domain.Entities
         public bool IsEmailVerified { get; private set; } = false;
         public string? VerificationToken { get; private set; }
 
+        // --- CAMPOS DE LGPD E AUDITORIA ---
+        public bool IsDeleted { get; private set; } = false;
+        public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
+
+        // Construtor vazio exigido pelo Entity Framework Core
         private User() { } 
 
+        // Construtor Rico (DDD)
         public User(string email, string password, Guid tenantId)
         {
             Id = Guid.NewGuid();
@@ -24,6 +29,7 @@ namespace ERP.Domain.Entities
             VerificationToken = Guid.NewGuid().ToString();
         }
 
+        // Comportamentos (Métodos)
         public bool VerifyPassword(string password)
         {
             return BCrypt.Net.BCrypt.Verify(password, PasswordHash);
@@ -33,6 +39,12 @@ namespace ERP.Domain.Entities
         {
             IsEmailVerified = true;
             VerificationToken = null; 
+        }
+
+        // Método para LGPD (Soft Delete)
+        public void InactivateAccount()
+        {
+            IsDeleted = true;
         }
     }
 }
