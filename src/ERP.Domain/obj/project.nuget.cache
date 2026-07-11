@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VmHV0HAaRCL00U5UFiYLFeQa16ciAQVVGmP/h0kEo1Kay+fCDMdeOJNCfMgdZzGkXDM+oIlJkltVwQQXN+suWg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\eu\\Downloads\\Modularis_ERP-main\\Modularis_ERP-main\\src\\ERP.Domain\\ERP.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\eu\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
