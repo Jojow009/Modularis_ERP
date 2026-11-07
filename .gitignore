@@ -1,0 +1,8 @@
+﻿.env
+.env.*
+appsettings.json
+appsettings.*.json
+node_modules/
+bin/
+obj/
+.next/
